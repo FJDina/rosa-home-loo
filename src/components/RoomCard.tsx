@@ -65,55 +65,28 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
         )} 
         style={{ animationDelay: `${index * 100}ms` }}
       >
-        {/* Image Carousel */}
-        <div className="relative h-64 md:h-80 overflow-hidden">
-          {room.images.map((image, idx) => (
-            <div 
-              key={idx}
-              className={cn(
-                "absolute inset-0 transition-opacity duration-500",
-                idx === activeImageIndex ? "opacity-100" : "opacity-0"
-              )}
-            >
-              <img 
-                src={image} 
-                alt={`${room.name} - изображение ${idx + 1}`} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          ))}
-          
-          {/* Navigation Buttons */}
-          <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button 
-              onClick={prevImage}
-              className="bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition-all"
-              aria-label="Предыдущее изображение"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button 
-              onClick={nextImage}
-              className="bg-black/30 hover:bg-black/50 text-white rounded-full p-2 transition-all"
-              aria-label="Следующее изображение"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+        {/* Main Image - Clickable to open gallery */}
+        <div 
+          className="relative h-64 md:h-80 overflow-hidden cursor-pointer"
+          onClick={() => openModal(activeImageIndex)}
+        >
+          <img 
+            src={room.images[0]} 
+            alt={`${room.name} - главное изображение`} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           
           {/* Expand Button */}
           <button 
-            onClick={() => openModal(activeImageIndex)}
+            onClick={(e) => {
+              e.stopPropagation();
+              openModal(activeImageIndex);
+            }}
             className="absolute top-4 right-4 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all"
             aria-label="Открыть галерею"
           >
             <Maximize2 size={18} />
           </button>
-          
-          {/* Image Counter */}
-          <div className="absolute bottom-4 right-4 bg-black/50 text-white text-sm px-3 py-1 rounded-full">
-            {activeImageIndex + 1} / {room.images.length}
-          </div>
         </div>
         
         {/* Room Info */}
@@ -132,14 +105,17 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
             </div>
           </div>
           
-          <ul className="mb-5">
-            {room.features.map((feature, idx) => (
-              <li key={idx} className="text-coast-600 text-sm mb-1 flex items-start">
-                <span className="mr-2 text-accent">•</span>
-                {feature}
-              </li>
-            ))}
-          </ul>
+          <div className="mb-5">
+            <h4 className="font-semibold mb-2 text-sea-700">✅ Особенности номера:</h4>
+            <ul>
+              {room.features.map((feature, idx) => (
+                <li key={idx} className="text-coast-600 text-sm mb-1 flex items-start">
+                  <span className="mr-2 text-accent">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
           
           <div className="mt-auto">
             <Collapsible
@@ -152,22 +128,22 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
                   variant="outline"
                   className="w-full flex items-center justify-center gap-2 bg-sea-50 hover:bg-sea-100 text-sea-800 border-sea-200"
                 >
-                  {isExpanded ? 'Скрыть галерею' : 'Показать больше фото'}
+                  {isExpanded ? 'Скрыть фотографии' : 'Показать больше фото'}
                   {isExpanded ? <X size={16} /> : <ChevronRight size={16} />}
                 </Button>
               </CollapsibleTrigger>
               
               <CollapsibleContent className="space-y-2">
                 <div className="grid grid-cols-2 gap-2">
-                  {room.images.slice(0, 4).map((img, idx) => (
+                  {room.images.slice(1, 5).map((img, idx) => (
                     <div 
                       key={`expanded-${idx}`} 
                       className="cursor-pointer rounded-md overflow-hidden aspect-video"
-                      onClick={() => openModal(idx)}
+                      onClick={() => openModal(idx + 1)}
                     >
                       <img 
                         src={img} 
-                        alt={`${room.name} - фото ${idx + 1}`} 
+                        alt={`${room.name} - фото ${idx + 2}`} 
                         className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                       />
                     </div>
