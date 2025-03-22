@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Wifi, Car, Camera, Kitchen, Wind, UtensilsCrossed, Baby } from 'lucide-react';
+import { Wifi, Car, Camera, CookingPot, Wind, UtensilsCrossed, Baby } from 'lucide-react';
 
 const amenities = [
   {
@@ -29,7 +29,7 @@ const amenities = [
   },
   {
     id: 'kitchen',
-    icon: Kitchen,
+    icon: CookingPot,
     title: 'Летняя кухня',
     description: 'Современная летняя кухня, оборудованная всем необходимым'
   },
