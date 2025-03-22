@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -8,6 +7,8 @@ import AboutUs from '@/components/AboutUs';
 import Gallery from '@/components/Gallery';
 import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 // Sample data for rooms
 const roomsData: RoomType[] = [
@@ -221,10 +222,42 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {roomsData.map((room, index) => (
-              <RoomCard key={room.id} room={room} index={index} />
-            ))}
+          {/* Desktop view: Carousel */}
+          <div className="hidden md:block mx-auto max-w-[1200px]">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {roomsData.map((room, index) => (
+                  <CarouselItem key={room.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="h-full">
+                      <RoomCard room={room} index={index} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-4 mt-8">
+                <CarouselPrevious className="relative static md:absolute" />
+                <CarouselNext className="relative static md:absolute" />
+              </div>
+            </Carousel>
+          </div>
+          
+          {/* Mobile view: Horizontal scroll */}
+          <div className="md:hidden">
+            <ScrollArea className="w-full whitespace-nowrap rounded-md">
+              <div className="flex space-x-6 pb-6 pt-1 px-1">
+                {roomsData.map((room, index) => (
+                  <div key={room.id} className="w-[280px] shrink-0">
+                    <RoomCard room={room} index={index} />
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
           </div>
           
           <div className="text-center mt-12">

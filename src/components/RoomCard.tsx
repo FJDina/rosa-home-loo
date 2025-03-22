@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 export type RoomType = {
   id: number;
@@ -22,6 +24,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const nextImage = () => {
     setActiveImageIndex((prev) => (prev + 1) % room.images.length);
@@ -57,7 +60,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
       <div 
         className={cn(
           "group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl hover-scale",
-          "opacity-0 animate-fade-in",
+          "opacity-0 animate-fade-in h-full flex flex-col",
           { "animation-delay-100": index % 2 === 1, "animation-delay-200": index % 3 === 2 }
         )} 
         style={{ animationDelay: `${index * 100}ms` }}
@@ -114,7 +117,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
         </div>
         
         {/* Room Info */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-xl font-semibold mb-2 text-sea-800">{room.name}</h3>
           <p className="text-coast-600 mb-4">{room.description}</p>
           
@@ -138,14 +141,50 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
             ))}
           </ul>
           
-          <a
-            href="https://realitycalendar.ru"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-sea-50 hover:bg-sea-100 text-sea-800 text-center py-3 rounded-md font-medium transition-colors border border-sea-200"
-          >
-            Забронировать
-          </a>
+          <div className="mt-auto">
+            <Collapsible
+              open={isExpanded}
+              onOpenChange={setIsExpanded}
+              className="w-full space-y-4"
+            >
+              <CollapsibleTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-full flex items-center justify-center gap-2 bg-sea-50 hover:bg-sea-100 text-sea-800 border-sea-200"
+                >
+                  {isExpanded ? 'Скрыть галерею' : 'Показать больше фото'}
+                  {isExpanded ? <X size={16} /> : <ChevronRight size={16} />}
+                </Button>
+              </CollapsibleTrigger>
+              
+              <CollapsibleContent className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  {room.images.slice(0, 4).map((img, idx) => (
+                    <div 
+                      key={`expanded-${idx}`} 
+                      className="cursor-pointer rounded-md overflow-hidden aspect-video"
+                      onClick={() => openModal(idx)}
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${room.name} - фото ${idx + 1}`} 
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+            
+            <a
+              href={`https://realitycalendar.ru/rooms/${room.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-sea-600 hover:bg-sea-700 text-white text-center py-3 rounded-md font-medium transition-colors mt-4"
+            >
+              Забронировать
+            </a>
+          </div>
         </div>
       </div>
       
@@ -167,7 +206,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, index }) => {
               onClick={closeModal}
               aria-label="Закрыть"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+              <X size={24} />
             </button>
             
             <button
