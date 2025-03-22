@@ -155,7 +155,7 @@ const roomsData: RoomType[] = [
   },
   {
     id: 8,
-    name: 'Апартаменты',
+    name: 'Апартамен��ы',
     description: 'Просторные апартаменты с кухней и гостиной, идеально подходящие для длительного проживания.',
     capacity: '4 человека',
     size: '55 м²',
@@ -222,42 +222,13 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Desktop view: Carousel */}
-          <div className="hidden md:block mx-auto max-w-[1200px]">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {roomsData.map((room, index) => (
-                  <CarouselItem key={room.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="h-full">
-                      <RoomCard room={room} index={index} />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
-                <CarouselPrevious className="relative static md:absolute" />
-                <CarouselNext className="relative static md:absolute" />
+          {/* Vertical Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {roomsData.map((room, index) => (
+              <div key={room.id} className="h-full">
+                <RoomCard room={room} index={index} />
               </div>
-            </Carousel>
-          </div>
-          
-          {/* Mobile view: Horizontal scroll */}
-          <div className="md:hidden">
-            <ScrollArea className="w-full whitespace-nowrap rounded-md">
-              <div className="flex space-x-6 pb-6 pt-1 px-1">
-                {roomsData.map((room, index) => (
-                  <div key={room.id} className="w-[280px] shrink-0">
-                    <RoomCard room={room} index={index} />
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
+            ))}
           </div>
           
           <div className="text-center mt-12">

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Wifi, Car, Camera, CookingPot, Wind, UtensilsCrossed, Baby } from 'lucide-react';
+import { Wifi, Car, Camera, CookingPot, Wind, UtensilsCrossed } from 'lucide-react';
 
 const amenities = [
   {
@@ -38,12 +37,6 @@ const amenities = [
     icon: UtensilsCrossed,
     title: 'Зона барбекю',
     description: 'Специально оборудованная зона для приготовления барбекю'
-  },
-  {
-    id: 'baby-crib',
-    icon: Baby,
-    title: 'Детская кроватка',
-    description: 'Детская кроватка предоставляется по запросу'
   }
 ];
 
