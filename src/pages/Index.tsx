@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -135,11 +136,11 @@ const roomCategories = [
           ...commonFeatures
         ],
         images: [
-          'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1587155919120-eab47c53f1f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1610392734074-86861661a195?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
+          'public/lovable-uploads/d86744e0-2ce8-447b-a98f-a9b984087cf2.png',
+          'public/lovable-uploads/5e03b727-fdba-4c8f-b1ff-3ccc33ec47cd.png',
+          'public/lovable-uploads/c8e16b73-d760-4a80-9670-4e1d3798bd45.png',
+          'public/lovable-uploads/5430c28e-8cd3-4f59-8fca-8261d660fe61.png',
+          'public/lovable-uploads/0dbf9c96-4374-4d4b-ae33-b5f7f7fb9d77.png'
         ]
       },
       {
@@ -155,11 +156,11 @@ const roomCategories = [
           ...commonFeatures
         ],
         images: [
-          'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1630157887466-a671d25ef6e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1615874694520-474822394e73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1612320648993-61c1cd604b71?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3'
+          'public/lovable-uploads/d86744e0-2ce8-447b-a98f-a9b984087cf2.png',
+          'public/lovable-uploads/5e03b727-fdba-4c8f-b1ff-3ccc33ec47cd.png',
+          'public/lovable-uploads/c8e16b73-d760-4a80-9670-4e1d3798bd45.png',
+          'public/lovable-uploads/5430c28e-8cd3-4f59-8fca-8261d660fe61.png',
+          'public/lovable-uploads/0dbf9c96-4374-4d4b-ae33-b5f7f7fb9d77.png'
         ]
       }
     ]
@@ -183,9 +184,9 @@ const roomCategories = [
           ...commonFeatures
         ],
         images: [
-          'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1568495248636-6432b97bd949?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
+          'public/lovable-uploads/a63a11c1-e204-49f6-a1c5-16575e8b58f7.png',
+          'public/lovable-uploads/edc66ed1-f99a-4235-ac22-f6c5bbaed95d.png',
+          'public/lovable-uploads/9bbd9a74-e152-46c5-a67d-5475a9b30dff.png'
         ]
       }
     ]

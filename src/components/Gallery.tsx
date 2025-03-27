@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
@@ -89,6 +88,56 @@ const galleryImages = [
     category: 'rooms',
     src: 'public/lovable-uploads/668c92b3-c402-4a4b-a3ad-f1585fed254f.png',
     alt: 'Большая спальня'
+  },
+  // Category 3 - Comfort Triple Room on 1st Floor
+  {
+    id: 15,
+    category: 'rooms',
+    src: 'public/lovable-uploads/d86744e0-2ce8-447b-a98f-a9b984087cf2.png',
+    alt: 'Ванная комната с душем на первом этаже'
+  },
+  {
+    id: 16,
+    category: 'rooms',
+    src: 'public/lovable-uploads/5e03b727-fdba-4c8f-b1ff-3ccc33ec47cd.png',
+    alt: 'Стол с фруктами в комнате'
+  },
+  {
+    id: 17,
+    category: 'rooms',
+    src: 'public/lovable-uploads/c8e16b73-d760-4a80-9670-4e1d3798bd45.png',
+    alt: 'Вход в комнату на первом этаже'
+  },
+  {
+    id: 18,
+    category: 'rooms',
+    src: 'public/lovable-uploads/5430c28e-8cd3-4f59-8fca-8261d660fe61.png',
+    alt: 'Спальня на первом этаже'
+  },
+  {
+    id: 19,
+    category: 'rooms',
+    src: 'public/lovable-uploads/0dbf9c96-4374-4d4b-ae33-b5f7f7fb9d77.png',
+    alt: 'Детали интерьера спальни'
+  },
+  // Category 4 - Luxury Triple Room with Private Entrance and Terrace
+  {
+    id: 20,
+    category: 'rooms',
+    src: 'public/lovable-uploads/a63a11c1-e204-49f6-a1c5-16575e8b58f7.png',
+    alt: 'Трехместный номер с отдельным входом'
+  },
+  {
+    id: 21,
+    category: 'rooms',
+    src: 'public/lovable-uploads/edc66ed1-f99a-4235-ac22-f6c5bbaed95d.png',
+    alt: 'Ванная комната в номере с отдельным входом'
+  },
+  {
+    id: 22,
+    category: 'rooms',
+    src: 'public/lovable-uploads/9bbd9a74-e152-46c5-a67d-5475a9b30dff.png',
+    alt: 'Интерьер номера с отдельным входом'
   }
 ];
 

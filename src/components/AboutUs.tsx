@@ -6,12 +6,12 @@ const AboutUs = () => {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
+          {/* Text Content */}
           <div>
             <h2 className="section-title">О нас</h2>
             <p className="text-coast-600 mb-6">
-              Отель "Loo Home&Sea" расположен в тихом и живописном районе Сочи, всего в 200 метрах от пляжа. 
+              Отель "Rosa Home Loo" расположен в тихом и живописном районе Сочи, всего в 200 метрах от пляжа. 
               Наш отель предлагает уютные номера с современным дизайном и всеми необходимыми удобствами для 
               вашего комфортного отдыха.
             </p>
@@ -75,7 +75,7 @@ const AboutUs = () => {
             <div className="bg-sea-50 p-6 rounded-lg border border-sea-100">
               <h4 className="font-semibold text-sea-800 mb-3">Дополнительная информация</h4>
               <p className="text-sm text-coast-600 mb-2">
-                Отель "Loo Home&Sea" расположен в микрорайоне Лоо, который славится своим чистым пляжем и 
+                Отель "Rosa Home Loo" расположен в микрорайоне Лоо, который славится своим чистым пляжем и 
                 спокойной атмосферой. Близость к морю, комфортные номера и дружелюбный персонал делают 
                 наш отель идеальным выбором для семейного отдыха.
               </p>
@@ -83,42 +83,6 @@ const AboutUs = () => {
                 В непосредственной близости от отеля находятся магазины, кафе, рестораны и остановки 
                 общественного транспорта, что обеспечивает удобный доступ ко всем достопримечательностям Сочи.
               </p>
-            </div>
-          </div>
-          
-          {/* Right Column - Images */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="overflow-hidden rounded-lg shadow-lg h-64">
-                <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Отель" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="overflow-hidden rounded-lg shadow-lg h-48">
-                <img 
-                  src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Пляж" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="space-y-4 mt-8">
-              <div className="overflow-hidden rounded-lg shadow-lg h-48">
-                <img 
-                  src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Сочи" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="overflow-hidden rounded-lg shadow-lg h-64">
-                <img 
-                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                  alt="Террасса" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
             </div>
           </div>
         </div>
