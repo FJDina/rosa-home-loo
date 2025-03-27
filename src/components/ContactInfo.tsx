@@ -69,7 +69,7 @@ const ContactInfo = () => {
             </div>
             
             <div className="mt-10 p-6 bg-sea-50 rounded-lg border border-sea-100">
-              <h4 className="font-semibold text-sea-800 mb-3">Как добраться</h4>
+              <h4 className="font-semibold text-sea-800 mb-1">Как добраться</h4>
               <p className="text-coast-600 mb-4">
                 Отель находится в микрорайоне Лоо, в 20 километрах от центра Сочи. 
                 Добраться до нас можно на автомобиле, такси или общественном транспорте.
@@ -102,15 +102,15 @@ const ContactInfo = () => {
             </div>
           </div>
           
-          {/* Right Column - Map */}
+          {/* Right Column - Map with marker */}
           <div className="h-[500px] rounded-xl overflow-hidden shadow-lg">
-            {/* Yandex Map Integration */}
+            {/* Yandex Map with fixed marker */}
             <iframe 
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac0fa06f1c49d73e14f62cbe6d6dbe1be4e7fdc9c33a7b8d9a5eb5e0dd28c7b35&amp;source=constructor"
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f2dbf5bac76c1b3ab9c5e0ad2eb1d77a5f1eaa6a0f6b7ba96b9ca8f5d9c9732&amp;source=constructor"
               width="100%" 
               height="100%" 
               frameBorder="0"
-              title="Loo Home&Sea на карте"
+              title="Rosa Home Loo на карте"
               className="w-full h-full"
               loading="lazy"
             ></iframe>
