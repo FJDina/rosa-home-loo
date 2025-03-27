@@ -8,6 +8,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 export type RoomType = {
   id: number;
   name: string;
+  categoryId: number;
   description: string;
   features: string[];
   images: string[];

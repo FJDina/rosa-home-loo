@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-20 text-center max-w-4xl animate-fade-in">
         <h2 className="text-lg md:text-xl font-medium text-white/95 mb-2">Добро пожаловать в</h2>
         <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6">
-          Loo Home<span className="text-sea-300">&</span>Sea
+          Rosa Home <span className="text-sea-300">Loo</span>
         </h1>
         <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Ваш уютный отель на берегу Черного моря в Сочи, где комфорт встречается с великолепными видами и гостеприимством
