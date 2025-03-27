@@ -108,11 +108,11 @@ const roomCategories = [
           ...commonFeatures
         ],
         images: [
-          'https://images.unsplash.com/photo-1630157886671-1cdf10a5c441?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1560185127-c67dc9a32e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1618219740975-d40978bb7378?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
+          'public/lovable-uploads/73184c97-8dc7-499c-a94b-af3455f8460c.png',
+          'public/lovable-uploads/7757c440-193a-4fd4-96f7-b11c840bd54b.png',
+          'public/lovable-uploads/70692f1e-728e-41b7-b3b8-30fb8cf218ee.png',
+          'public/lovable-uploads/206f924c-d570-445a-abdb-a794caa53576.png',
+          'public/lovable-uploads/668c92b3-c402-4a4b-a3ad-f1585fed254f.png'
         ]
       }
     ]

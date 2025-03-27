@@ -2,143 +2,99 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-// Gallery images including the newly uploaded room photos
+// Gallery images - only include user uploaded images
 const galleryImages = [
-  // Original gallery images
+  // Category 1 - Luxury Triple Room with Balcony
   {
     id: 1,
-    category: 'hotel',
-    src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Отель - внешний вид'
-  },
-  {
-    id: 2,
-    category: 'rooms',
-    src: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Номер - спальня'
-  },
-  {
-    id: 3,
-    category: 'surroundings',
-    src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Окрестности - пляж'
-  },
-  {
-    id: 4,
-    category: 'hotel',
-    src: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Отель - территория'
-  },
-  {
-    id: 5,
-    category: 'rooms',
-    src: 'https://images.unsplash.com/photo-1560185127-c67dc9a32e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Номер - гостиная'
-  },
-  {
-    id: 6,
-    category: 'surroundings',
-    src: 'https://images.unsplash.com/photo-1636389155761-810de99a44d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Окрестности - море'
-  },
-  {
-    id: 7,
-    category: 'hotel',
-    src: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Отель - холл'
-  },
-  {
-    id: 8,
-    category: 'rooms',
-    src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Номер - ванная'
-  },
-  {
-    id: 9,
-    category: 'surroundings',
-    src: 'https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Окрестности - горы'
-  },
-  {
-    id: 10,
-    category: 'hotel',
-    src: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Отель - бассейн'
-  },
-  {
-    id: 11,
-    category: 'rooms',
-    src: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Номер - балкон'
-  },
-  {
-    id: 12,
-    category: 'surroundings',
-    src: 'https://images.unsplash.com/photo-1589485257263-9d7beab5e4a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
-    alt: 'Окрестности - закат'
-  },
-  // New uploaded room photos
-  {
-    id: 13,
     category: 'rooms',
     src: 'public/lovable-uploads/b4a7f2dc-ae8e-4336-bf56-1c717a9fd563.png',
     alt: 'Ванная комната с душем'
   },
   {
-    id: 14,
+    id: 2,
     category: 'rooms',
     src: 'public/lovable-uploads/e0eaae02-5e59-46a9-9903-62658de16a47.png',
     alt: 'Балкон с видом'
   },
   {
-    id: 15,
+    id: 3,
     category: 'rooms',
     src: 'public/lovable-uploads/eb8768cf-d99a-4847-b2a5-d444396f5ecf.png',
     alt: 'Спальня с кроватью'
   },
   {
-    id: 16,
+    id: 4,
     category: 'rooms',
     src: 'public/lovable-uploads/9f985940-3dfd-4ecb-b77d-57eea1a600e0.png',
     alt: 'Интерьер комнаты'
   },
   {
-    id: 17,
+    id: 5,
     category: 'rooms',
     src: 'public/lovable-uploads/25f36fd3-c43d-4dfb-9d99-60cb32172e79.png',
     alt: 'Шкаф в комнате'
   },
   {
-    id: 18,
+    id: 6,
     category: 'rooms',
     src: 'public/lovable-uploads/31e4374a-686a-4054-8060-f726bdc68f4d.png',
     alt: 'Вид комнаты'
   },
   {
-    id: 19,
+    id: 7,
     category: 'rooms',
     src: 'public/lovable-uploads/7bb2a6a1-9355-4ff2-91fa-a1d6f720c894.png',
     alt: 'Декор комнаты'
   },
   {
-    id: 20,
+    id: 8,
     category: 'rooms',
     src: 'public/lovable-uploads/f93fc763-774f-4f2d-827a-baeb2cda1a5a.png',
     alt: 'Балкон номера'
   },
   {
-    id: 21,
+    id: 9,
     category: 'rooms',
     src: 'public/lovable-uploads/a4b1654c-1f36-4eb4-8320-b25d1146196c.png',
     alt: 'Душевая комната'
+  },
+  // Category 2 - Luxury Quadruple Room with Balcony
+  {
+    id: 10,
+    category: 'rooms',
+    src: 'public/lovable-uploads/73184c97-8dc7-499c-a94b-af3455f8460c.png',
+    alt: 'Балкон номера для четверых'
+  },
+  {
+    id: 11,
+    category: 'rooms',
+    src: 'public/lovable-uploads/7757c440-193a-4fd4-96f7-b11c840bd54b.png',
+    alt: 'Спальня с двумя кроватями'
+  },
+  {
+    id: 12,
+    category: 'rooms',
+    src: 'public/lovable-uploads/70692f1e-728e-41b7-b3b8-30fb8cf218ee.png',
+    alt: 'Интерьер номера для четверых'
+  },
+  {
+    id: 13,
+    category: 'rooms',
+    src: 'public/lovable-uploads/206f924c-d570-445a-abdb-a794caa53576.png',
+    alt: 'Ванная комната номера'
+  },
+  {
+    id: 14,
+    category: 'rooms',
+    src: 'public/lovable-uploads/668c92b3-c402-4a4b-a3ad-f1585fed254f.png',
+    alt: 'Большая спальня'
   }
 ];
 
 const categories = [
   { id: 'all', label: 'Все' },
-  { id: 'hotel', label: 'Отель' },
-  { id: 'rooms', label: 'Номера' },
-  { id: 'surroundings', label: 'Окрестности' },
+  { id: 'rooms', label: 'Номера' }
 ];
 
 const Gallery = () => {
