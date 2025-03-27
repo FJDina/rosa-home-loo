@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1 - About */}
           <div>
-            <h4 className="text-2xl font-playfair font-semibold mb-4">Loo Home<span className="text-sea-300">&</span>Sea</h4>
+            <h4 className="text-2xl font-playfair font-semibold mb-4">Rosa Home <span className="text-sea-300">Loo</span></h4>
             <p className="text-sea-100 mb-4">
               Уютный отель на берегу Черного моря в Сочи, где комфорт встречается с великолепными видами и гостеприимством.
             </p>
@@ -105,7 +105,7 @@ const Footer = () => {
         
         <div className="border-t border-sea-700 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sea-200 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Loo Home&Sea. Все права защищены.
+            © {new Date().getFullYear()} Rosa Home Loo. Все права защищены.
           </p>
           <div className="flex gap-3">
             <a href="#" className="text-sea-200 hover:text-sea-300 text-sm transition-colors">

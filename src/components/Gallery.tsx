@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-// Example gallery images
+// Gallery images including the newly uploaded room photos
 const galleryImages = [
+  // Original gallery images
   {
     id: 1,
     category: 'hotel',
@@ -76,6 +77,61 @@ const galleryImages = [
     src: 'https://images.unsplash.com/photo-1589485257263-9d7beab5e4a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3',
     alt: 'Окрестности - закат'
   },
+  // New uploaded room photos
+  {
+    id: 13,
+    category: 'rooms',
+    src: 'public/lovable-uploads/b4a7f2dc-ae8e-4336-bf56-1c717a9fd563.png',
+    alt: 'Ванная комната с душем'
+  },
+  {
+    id: 14,
+    category: 'rooms',
+    src: 'public/lovable-uploads/e0eaae02-5e59-46a9-9903-62658de16a47.png',
+    alt: 'Балкон с видом'
+  },
+  {
+    id: 15,
+    category: 'rooms',
+    src: 'public/lovable-uploads/eb8768cf-d99a-4847-b2a5-d444396f5ecf.png',
+    alt: 'Спальня с кроватью'
+  },
+  {
+    id: 16,
+    category: 'rooms',
+    src: 'public/lovable-uploads/9f985940-3dfd-4ecb-b77d-57eea1a600e0.png',
+    alt: 'Интерьер комнаты'
+  },
+  {
+    id: 17,
+    category: 'rooms',
+    src: 'public/lovable-uploads/25f36fd3-c43d-4dfb-9d99-60cb32172e79.png',
+    alt: 'Шкаф в комнате'
+  },
+  {
+    id: 18,
+    category: 'rooms',
+    src: 'public/lovable-uploads/31e4374a-686a-4054-8060-f726bdc68f4d.png',
+    alt: 'Вид комнаты'
+  },
+  {
+    id: 19,
+    category: 'rooms',
+    src: 'public/lovable-uploads/7bb2a6a1-9355-4ff2-91fa-a1d6f720c894.png',
+    alt: 'Декор комнаты'
+  },
+  {
+    id: 20,
+    category: 'rooms',
+    src: 'public/lovable-uploads/f93fc763-774f-4f2d-827a-baeb2cda1a5a.png',
+    alt: 'Балкон номера'
+  },
+  {
+    id: 21,
+    category: 'rooms',
+    src: 'public/lovable-uploads/a4b1654c-1f36-4eb4-8320-b25d1146196c.png',
+    alt: 'Душевая комната'
+  }
 ];
 
 const categories = [

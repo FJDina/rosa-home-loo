@@ -43,7 +43,7 @@ const Navbar = () => {
             "font-playfair text-2xl font-bold transition-colors",
             scrolled ? "text-sea-800" : "text-white"
           )}>
-            Loo Home<span className="text-accent">&</span>Sea
+            Rosa Home <span className="text-accent">Loo</span>
           </span>
         </a>
 
